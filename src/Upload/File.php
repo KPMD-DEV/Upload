@@ -189,6 +189,7 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
      * @return \Upload\File                        Self
      * @throws \InvalidArgumentException           If argument is not a Closure or invokable object
      */
+    #[\ReturnTypeWillChange]
     public function afterValidate($callable)
     {
         if (is_object($callable) === false || method_exists($callable, '__invoke') === false) {
