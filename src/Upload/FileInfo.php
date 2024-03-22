@@ -110,6 +110,7 @@ class FileInfo extends \SplFileInfo implements \Upload\FileInfoInterface
      *
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function getExtension()
     {
         return $this->extension;
