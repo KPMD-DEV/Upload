@@ -395,22 +395,22 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
     /********************************************************************************
      * Array Access Interface
      *******************************************************************************/
-
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->objects[$offset]);
     }
-
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return isset($this->objects[$offset]) ? $this->objects[$offset] : null;
     }
-
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->objects[$offset] = $value;
     }
-
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->objects[$offset]);
@@ -419,7 +419,7 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
     /********************************************************************************
      * Iterator Aggregate Interface
      *******************************************************************************/
-
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new \ArrayIterator($this->objects);
@@ -428,7 +428,7 @@ class File implements \ArrayAccess, \IteratorAggregate, \Countable
     /********************************************************************************
      * Countable Interface
      *******************************************************************************/
-
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->objects);
